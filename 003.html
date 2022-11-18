@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        :root {
+            --width: 800px;
+        }
+        
+        .note {
+            width: var(--width);
+            margin: 80px auto;
+            padding: 50px 200px;
+            box-sizing: border-box;
+            background: #eee;
+            font-size: 15px;
+            line-height: 1.3rem;
+        }
+
+        .btn-bg {
+            width: var(--width);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .btn-003 {
+            font-family: roboto;
+            font-size: 30px;
+            font-weight: border;
+            padding: 5px 13px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            box-shadow: 2px 10px 20px 0 #ddd;
+            background: linear-gradient(90deg,#1e39a5,#c50e07);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="note">
+                                                <pre>
+# 3. 크로스 브라우징
+
+(1) 벤더프리픽스 (Vendor-Prefix): 
+브라우저 제조사만의 접두어(prefix)를 붙이는 문법
+-webkit-
+-moz-
+-ms-
+-o-
+
+(2) Autoprefixer 라이브러리: 벤더프리픽스 자동화 툴</pre>
+    <pre style="color: #777; background: #ddd; padding: 30px">
+"autoprefixer.options": {
+    "browsers": [
+        "last 4 versions",
+        "ie >= 9",
+        "> 5%"
+    ]
+}   </pre>
+    </div>
+
+    <div class="btn-bg">
+        <button class="btn-003">Click</button>
+    </div>
+</body>
+
+</html>
