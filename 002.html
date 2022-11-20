@@ -27,7 +27,7 @@
             text-align: center;
         }
 
-        .btn-002 {
+        .btn {
             width: 77.5px;
             height: 43px;
             border: 1px solid #eee;
@@ -44,20 +44,18 @@
 
 <body>
     <div class="note">
-                    <pre>
+                      <pre>
 # 2. 다중 스타일시트
 
 @charset: 문자 인코딩
-@charset "utf-8";
-@import: 다른 스타일 시트 
+    @charset "utf-8";
+@import: 다른 스타일 시트
     @import: "foo.css"
     @import url("hello.css");
     @import url(hello.css);
     @import url("./hello.css");
     @import "hello.css"; // @import hello.css;는 안됩니다.
-
     @import "hello.css";
-
 @font-face: 폰트
 @keyframes: 애니메이션
 @media: 디바이스
@@ -65,7 +63,7 @@
     </div>
 
     <div class="btn-bg">
-        <button class="btn-002">Click</button>
+        <button class="btn">Click</button>
     </div>
 </body>
 
