@@ -1,0 +1,55 @@
+@import './styles/utiles';
+
+.SassComponent {
+  display: flex;
+
+  .box {
+    // .SassCopmonent .box
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &.red {
+      // .box.red
+      background: $red;
+      @include square(1);
+      // width: 32px * 1;
+      // height: 32px * 1;
+    }
+
+    &.orange {
+      background: $orange;
+      @include square(2);
+    }
+
+    &.yellow {
+      background: $yellow;
+      @include square(3);
+    }
+
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+
+    &.indigo {
+      background: $indigo;
+      @include square(6);
+    }
+
+    &.violet {
+      background: $violet;
+      @include square(7);
+    }
+
+    &:hover {
+      // .box:hover
+      background: black;
+    }
+  }
+}
