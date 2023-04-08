@@ -20,7 +20,7 @@ class EventHandling extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <h2>이벤트 핸들링</h2>
         <h3>- 클래스형</h3>
         <input
@@ -52,6 +52,12 @@ class EventHandling extends Component {
         >
           확인
         </button>
+
+        <style jsx>{`
+          .container {
+            background-color: pink;
+          }
+        `}</style>
       </div>
     );
   }
@@ -90,7 +96,7 @@ const EventHandling2 = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h3>- 함수형</h3>
       <input
         type='text'
@@ -109,6 +115,11 @@ const EventHandling2 = () => {
         onKeyPress={onKeyPress}
       />
       <button onClick={onClick}>확인</button>
+      <style jsx>{`
+        .container {
+          background-color: pink;
+        }
+      `}</style>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './style.css';
+import './css/style.css';
+import styled from 'styled-components';
 
 // ref = DOM 조작
 // 요소에 포커스, 스크롤 조작...
@@ -25,7 +26,7 @@ export class RefFocus extends Component {
 
   render() {
     return (
-      <div>
+      <Sdiv>
         <h2>Ref</h2>
         <h3>- 클래스형</h3>
         {/* <input
@@ -55,7 +56,7 @@ export class RefFocus extends Component {
           }
         />
         <button onClick={this.handleButtonClick}>검증</button>
-      </div>
+      </Sdiv>
     );
   }
 }
@@ -93,3 +94,7 @@ export class RefScroll extends Component {
     );
   }
 }
+
+const Sdiv = styled.div`
+  background-color: lightyellow;
+`;

@@ -13,13 +13,12 @@ export class Props extends Component {
   };
 
   render() {
-    const { name, children, text } = this.props; // 비구조화 할당
+    const { name, children } = this.props; // 비구조화 할당
     return (
-      <div>
+      <div style={{ backgroundColor: 'lightblue' }}>
         <h2>Props</h2>
         <h3>- {name} 컴포넌트</h3>
         <button>{children}</button>
-        <button>{text}</button>
       </div>
     );
   }
@@ -28,10 +27,9 @@ export class Props extends Component {
 // 2) 함수형
 export const Props2 = props => {
   return (
-    <div>
+    <div style={{ backgroundColor: 'lightblue' }}>
       <h3>- {props.name} 컴포넌트</h3>
       <button>{props.children}</button>
-      <button>{props.text}</button>
     </div>
   );
 };

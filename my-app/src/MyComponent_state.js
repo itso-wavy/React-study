@@ -1,4 +1,5 @@
 import React, { Component, useState } from 'react';
+import classes from './scss/CssModules.module.scss';
 
 // 1) 클래스형
 export class State extends Component {
@@ -18,8 +19,10 @@ export class State extends Component {
   render() {
     const { text } = this.props;
     const { number, fixedNumber } = this.state;
+    const { container } = classes;
+
     return (
-      <div>
+      <div className={container}>
         <h2>{text}</h2>
         <h3>- 클래스형</h3>
         <p>바뀌지 않는 값: {fixedNumber}</p>
@@ -53,9 +56,10 @@ export const State2 = () => {
   const [msg, setMsg] = useState('');
   const onClickEnter = () => setMsg('굿모닝');
   const onClickLeave = () => setMsg('굿나잇');
+  const { container2 } = classes;
 
   return (
-    <div>
+    <div className={container2}>
       <h3>- 함수형</h3>
       <button onClick={onClickEnter}>아침</button>
       <button onClick={onClickLeave}>저녁</button>

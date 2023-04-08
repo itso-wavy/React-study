@@ -1,7 +1,28 @@
-@import './styles/utiles';
+@import './utils.scss';
+
+// 변수
+$red: #fa5252;
+$orange: #fd7e14;
+$yellow: #fcc419;
+$green: #40c057;
+$blue: #339af0;
+$indigo : #5c7cfa;
+$violet: #7950f2;
+
+// 믹스인
+@mixin square($size) {
+  $calculated: 32px * $size; // 지역변수
+  width: $calculated;
+  height: $calculated;
+}
 
 .SassComponent {
   display: flex;
+  background: $oc-gray-2;
+
+  @include media('<768px') {
+    background: $oc-gray-9;
+  }
 
   .box {
     // .SassCopmonent .box

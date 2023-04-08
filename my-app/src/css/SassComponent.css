@@ -1,5 +1,11 @@
 .SassComponent {
   display: flex;
+  background: #e9ecef;
+}
+@media (max-width: 767px) {
+  .SassComponent {
+    background: #212529;
+  }
 }
 .SassComponent .box {
   background: red;
