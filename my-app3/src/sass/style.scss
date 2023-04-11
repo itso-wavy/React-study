@@ -1,0 +1,140 @@
+@import 'reset.scss';
+@import 'mixin.scss';
+@import 'variables.scss';
+
+/* ===== CUSTOM ===== */
+
+header[role="banner"] {
+  margin: 20px 0 30px 0;
+  border-bottom: 4px solid #333;
+
+  #logo {
+    float: left;
+    margin: 0 20px 0 0;
+
+    img {
+      display: block;
+      opacity: .95;
+    }
+  }
+
+  h1 {
+    padding: 15px 0;
+    line-height: 1;
+
+    font: {
+      size: 54px;
+      family: Jubilat, Georgia, serif;
+      weight: bold;
+    }
+  }
+}
+
+
+@mixin tit-style($color: lightblue, $bgc: #dedede) {
+  color: $color;
+  background-color: $bgc;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+
+  font: {
+    family: var(--font-family-body);
+    size: 20px;
+    weight: bold;
+  }
+}
+
+section.main h2 {
+  @include tit-style($bgc: #738fff);
+}
+
+section.secondary h3 {
+  @include tit-style(pink);
+}
+
+@mixin rounded($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+  -mox-box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+}
+
+div.module {
+
+  width: 30px;
+  height: 30px;
+  @include rounded(10px);
+  @include shadow(0, 1px, 2px, rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+
+  &:hover {
+    @include shadow(0, 0, 2px, rgba(0, 0, 0, 0.486))
+  }
+}
+
+@mixin linear-gradient($from, $to) {
+  background: {
+    color: $to;
+    image: linear-gradient($from, $to);
+  }
+}
+
+div.back {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  @include linear-gradient(#f3b6b6, #e6f8d2);
+
+  & button {
+    padding: 3px 8px;
+    color: #fff;
+    @include rounded(4px);
+    @include linear-gradient(#ff70b1, #d42a78)
+  }
+}
+
+header nav[role="navigation"] {
+  display: inline-block;
+  padding: 3px 8px;
+  color: #fff;
+  @include rounded(4px);
+  @include linear-gradient(#42b3e2, #1a6798)
+}
+
+.alert {
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #fff;
+  background: green;
+  @include shadow(0, 1px, 2px, rgba(0, 0, 0, .5));
+  @include rounded(10px);
+}
+
+.alert-positive {
+  @extend .alert;
+  background: #9c3;
+  box-shadow: inset -1px -1px 2px 1px rgba(0, 0, 0, .2);
+}
+
+
+
+
+
+// 중첩: 선택자, 속성{font-, text-, background-}, 가상요소(&)
+// 변수
+// 주석: 멀티주석, 단일주석
+// @mixin+@include 공통 스타일을 추상화, 인자와 함께 사용하기{box-shadow, border-radius, gradation}
+// @extend

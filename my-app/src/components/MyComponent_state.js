@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import classes from './scss/CssModules.module.scss';
+import classes from '../styles/scss/CssModules.module.scss';
 
 // 1) 클래스형
 export class State extends Component {

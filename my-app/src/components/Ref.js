@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/style.css';
+import '../styles/css/style.css';
 import styled from 'styled-components';
 
 // ref = DOM 조작

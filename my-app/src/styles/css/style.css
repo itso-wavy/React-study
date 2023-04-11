@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+button {
+  border: 1px solid grey;
+  background-color: #efefef;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
 /* ref */
 .success {
   background-color: lightgreen;

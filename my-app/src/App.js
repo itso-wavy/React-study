@@ -1,10 +1,12 @@
-import { Props, Props2 } from './MyComponent_props.js';
-import { State, State2 } from './MyComponent_state.js';
-import { EventHandling, EventHandling2 } from './EventHandling.js';
-import { RefFocus, RefScroll } from './Ref.js';
-// import { SassComponent } from './SassComponent.js';
-import Emotion from './EmotionComponent.js';
-import Tailwind from './TailwindComponent.js';
+import './styles/css/style.css';
+
+import { Props, Props2 } from './components/MyComponent_props.js';
+import { State, State2 } from './components/MyComponent_state.js';
+import { EventHandling, EventHandling2 } from './components/EventHandling.js';
+import { RefFocus, RefScroll } from './components/Ref.js';
+// import { SassComponent } from './components/SassComponent.js';
+import Emotion from './components/EmotionComponent.js';
+import TailwindCSS from './components/TailwindComponent.js';
 
 const App = () => {
   return (
@@ -21,7 +23,7 @@ const App = () => {
       <button onClick={() => this.box.scrollToBottom()}>아래로</button> */}
       {/* <SassComponent /> */}
       <Emotion />
-      <Tailwind />
+      <TailwindCSS />
     </>
   );
 };
