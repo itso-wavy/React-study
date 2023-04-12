@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>replit</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const root = document.getElementById("root");
+
+  const Btn = ({ buttonName = 'button', color = 'red', onClick }) => {
+    const style = {
+      backgroundColor: color,
+      color: "white",
+      padding: "10px 20px",
+      border: 0,
+      borderRadius: "10px",
+      marginRight: "5px",
+      cursor: "pointer"
+    }
+
+    return (
+      <button style={style} onClick={onClick}>{buttonName}</button>
+    );
+  }
+  Btn.propTypes = {
+    buttonName: PropTypes.string,
+    color: PropTypes.string.isRequired,
+    onClick: PropTypes.func
+  }
+
+  const MemorizedBtn = React.memo(Btn)
+
+  const App = () => {
+    const [name, setName] = React.useState("render once");
+    const changeName = () => {
+      name === "render once" ? setName("render twice") : setName("render once")
+    };
+
+    return (
+      <div>
+        <Btn buttonName={name} color='teal' onClick={changeName} />
+        <MemorizedBtn buttonName={"render once"} color='gold' />
+      </div>
+    );
+  };
+
+  ReactDOM.render(<App />, root);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function Btn({ buttonName, changeName }) {
+    //   console.log(buttonName, "redered");
+    //   return (
+    //     <button
+    //       onClick={changeName}
+    //       style={{
+    //         backgroundColor: "teal",
+    //         color: "white",
+    //         padding: "10px 20px",
+    //         border: 0,
+    //         borderRadius: "10px",
+    //         marginRight: "5px",
+    //       }}
+    //     >
+    //       {buttonName}
+    //     </button>
+    //   );
+    // }
+    // const MemorizedBtn = React.memo(Btn);
+    // const App = () => {
+    //   const [name, setName] = React.useState("Save Changes");
+    //   const changeName = () => setName("Revert Changes");
+    //   return (
+    //     <div>
+    //       <MemorizedBtn buttonName={name} changeName={changeName} />
+    //       <MemorizedBtn buttonName={"Confirm"} />
+    //     </div>
+    //   );
+    // };
+
+</script>
+</html>
