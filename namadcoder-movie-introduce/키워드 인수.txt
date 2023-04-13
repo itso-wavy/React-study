@@ -1,0 +1,5 @@
+키워드 인수
+가변 인수
+@content
+
+box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);

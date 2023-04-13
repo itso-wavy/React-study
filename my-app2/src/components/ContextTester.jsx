@@ -11,6 +11,7 @@ const ContextTester = () => {
 
   return (
     <>
+      <h1>useContext</h1>
       <span>{isAdmin ? '관리자입니다' : '관리자가 아닙니다'}</span>
       <button onClick={onClickSwitch}>전환</button>
       <Card isAdmin={isAdmin}>{name}</Card>

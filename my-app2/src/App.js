@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import ContextTester from './components/ContextTester.jsx';
 import ModuleTester from './components/ModuleTester.jsx';
+import TodoList from './components/TodoList.jsx';
+import CoinTracker from './components/CoinTracker.jsx';
 const UseEffectTester = () => {
   useEffect(() => {
     console.log('created:)');
@@ -28,14 +30,18 @@ function App() {
 
   const [showing, setShowing] = useState(true);
   return (
-    <div>
+    <>
       <ContextTester />
       <ModuleTester />
       {showing ? <UseEffectTester /> : null}
 
       <h2>{counter}</h2>
       <button onClick={onClick}>click me</button>
-    </div>
+      <hr />
+      <TodoList />
+      <hr />
+      <CoinTracker />
+    </>
   );
 }
 

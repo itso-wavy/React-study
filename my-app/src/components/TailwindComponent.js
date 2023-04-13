@@ -5,6 +5,7 @@ import React from 'react';
 // npx tailwindcss init
 // tailwind.config.js 수정
 // postcss.config.js 생성
+// app.js에 import 코드 추가
 
 const TailwindComponent = () => {
   return (
