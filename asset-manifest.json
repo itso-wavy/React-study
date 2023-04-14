@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-study/namadcoder-movie-introduce/static/css/main.c0827f54.css",
+    "main.js": "/React-study/namadcoder-movie-introduce/static/js/main.c3d4f6be.js",
+    "index.html": "/React-study/namadcoder-movie-introduce/index.html",
+    "main.c0827f54.css.map": "/React-study/namadcoder-movie-introduce/static/css/main.c0827f54.css.map",
+    "main.c3d4f6be.js.map": "/React-study/namadcoder-movie-introduce/static/js/main.c3d4f6be.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0827f54.css",
+    "static/js/main.c3d4f6be.js"
+  ]
+}
