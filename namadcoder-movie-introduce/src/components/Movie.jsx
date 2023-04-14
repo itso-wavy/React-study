@@ -7,9 +7,9 @@ const style = {
 };
 
 function Movie({ movie }) {
-  const { id, title_long, rating, genres, medium_cover_image, title, summary } =
+  let { id, title_long, rating, genres, medium_cover_image, title, summary } =
     movie;
-  // TODO: fetch->async 바꾸기 -> async 안의 async로 바꾸기
+  genres.length > 4 && (genres = genres.slice(0, 4));
 
   return (
     <>

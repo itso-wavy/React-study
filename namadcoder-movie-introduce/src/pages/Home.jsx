@@ -10,15 +10,18 @@ const style = {
 function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
-    fetch(
-      'https://yts.mx/api/v2/list_movies.json?genre=Drama&sort_by=year&minimum_rating=8.5'
-    )
-      .then(res => res.json())
-      .then(data => {
-        setMovies(data.data.movies);
-        setLoading(false);
-      });
+    const getMovie = async () => {
+      const data = await (
+        await fetch(
+          'https://yts.mx/api/v2/list_movies.json?genre=Drama&sort_by=year&minimum_rating=8.5'
+        )
+      ).json();
+      setMovies(data.data.movies);
+      setLoading(false);
+    };
+    getMovie();
   }, []);
 
   return (

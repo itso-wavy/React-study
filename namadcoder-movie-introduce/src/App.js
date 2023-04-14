@@ -3,16 +3,15 @@ import Home from './pages/Home';
 import Detail from './pages/Detail';
 import 'tailwindcss/tailwind.css';
 
-// 동적 url /:id
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/movie/:id' element={<Detail />} />
+        <Route element={<Home />} path='/' />
+        <Route element={<Detail />} path='/movie/:id' />
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

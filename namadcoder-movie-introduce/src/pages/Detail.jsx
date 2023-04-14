@@ -3,16 +3,16 @@ import { useParams } from 'react-router-dom';
 
 const Detail = () => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
+  const id = useParams().id;
 
   useEffect(() => {
-    const getMovies = async () => {
-      const json = await (
+    const getMovie = async () => {
+      const data = await (
         await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
       ).json();
-      setData(json.data.movie);
+      setData(data.data.movie);
     };
-    getMovies();
+    getMovie();
   }, []);
 
   const { title_long, genres, medium_cover_image, description_intro } = data;
