@@ -1,10 +1,12 @@
-import useFadeIn from './hooks/useFadeIn';
+import useNetwork from './hooks/useNetwork';
 
 const App = () => {
-  const fadeInH1 = useFadeIn(1, 0);
+  const onChange = online => (online ? 'ONLINE' : 'OFFLINE');
+  const isOnline = useNetwork(onChange);
+
   return (
     <>
-      <h1 {...fadeInH1}>Hello world!</h1>
+      <h1>you are {onChange(isOnline)}</h1>
     </>
   );
 };
