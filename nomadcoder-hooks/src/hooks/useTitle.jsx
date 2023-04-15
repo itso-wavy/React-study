@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-const useTitle = initialTitle => {
-  const [title, setTitle] = useState(initialTitle);
+const useTitle = (service, title) => {
   useEffect(() => {
-    document.querySelector('title').innerText = 'wavy - ' + title;
-  }, [title]);
-  return setTitle;
+    document.querySelector('title').textContent = title
+      ? `${service} - ${title}`
+      : service;
+  }, []);
 };
 
 export default useTitle;

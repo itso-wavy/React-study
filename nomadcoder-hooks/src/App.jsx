@@ -1,10 +1,8 @@
 import useTitle from './hooks/useTitle';
 
 const App = () => {
-  const setTitle = useTitle('home');
-  setTimeout(() => {
-    setTitle('detail');
-  }, 3000);
+  useTitle('WAVY', 'home');
+
   return (
     <>
       <p>happyHacking!</p>
