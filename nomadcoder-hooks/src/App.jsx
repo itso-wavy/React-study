@@ -1,25 +1,17 @@
-import useTabs from './hooks/useTabs';
-
-const contents = [
-  { title: 'tab 1', content: 'content 1' },
-  { title: 'tab 2', content: 'content 2' },
-];
+import useClick from './hooks/useClick';
 
 const App = () => {
-  const { tab, selectTab } = useTabs(0, contents);
+  const onClickBtn = e => {
+    const input = e.target.previousSibling;
+    if (!input.value) input.focus();
+    else input.value = "I'm fine. thank you. and you? 👼";
+  };
+  const ref = useClick(onClickBtn);
 
   return (
     <>
-      <ul>
-        {contents.map((item, index) => (
-          <li>
-            <button index={index} onClick={() => selectTab(index)}>
-              {item.title}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p>{tab.content}</p>
+      <input type='text' placeholder='how are you? :)' />
+      <button ref={ref}>get answer</button>
     </>
   );
 };
