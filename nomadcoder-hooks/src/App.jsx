@@ -1,12 +1,24 @@
-import useInput from './hooks/useInput';
+import useTabs from './hooks/useTabs';
+
+const contents = [
+  {
+    tab: 'Section 1',
+    content: "I'm the section 1",
+  },
+  {
+    tab: 'Section 2',
+    content: "I'm the section 2",
+  },
+];
 
 const App = () => {
-  const validator = value => value.length < 10;
-  const input = useInput('wavy', validator);
-
+  const { section, changeItem } = useTabs(0, contents);
   return (
     <>
-      <input type='text' value={input.value} onChange={input.onChange} />
+      {contents.map((section, index) => (
+        <button onClick={() => changeItem(index)}>{section.tab}</button>
+      ))}
+      <div>{section.content}</div>
     </>
   );
 };
