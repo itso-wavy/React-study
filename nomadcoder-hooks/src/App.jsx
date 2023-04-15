@@ -1,17 +1,18 @@
-import useClick from './hooks/useClick';
+import useConfirm from './hooks/useConfirm';
 
 const App = () => {
-  const onClickBtn = e => {
-    const input = e.target.previousSibling;
-    if (!input.value) input.focus();
-    else input.value = "I'm fine. thank you. and you? 👼";
+  const message = 'Are you sure?';
+  const onConfirm = () => {
+    console.log('확인하셨습니다.');
   };
-  const ref = useClick(onClickBtn);
+  const onCancle = () => {
+    console.log('취소하셨습니다.');
+  };
+  const confirm = useConfirm(message, onConfirm, onCancle);
 
   return (
     <>
-      <input type='text' placeholder='how are you? :)' />
-      <button ref={ref}>get answer</button>
+      <button onClick={confirm}>Display confirmation window</button>
     </>
   );
 };
