@@ -1,18 +1,13 @@
-import useConfirm from './hooks/useConfirm';
+import usePreventLeave from './hooks/usePreventLeave';
 
 const App = () => {
-  const message = 'Are you sure?';
-  const onConfirm = () => {
-    console.log('확인하셨습니다.');
-  };
-  const onCancle = () => {
-    console.log('취소하셨습니다.');
-  };
-  const confirm = useConfirm(message, onConfirm, onCancle);
+  const { enablePrevent, diablePrevent } = usePreventLeave();
 
   return (
     <>
-      <button onClick={confirm}>Display confirmation window</button>
+      <p>선택 후 새로고침🔄</p>
+      <button onClick={enablePrevent}>protect</button>
+      <button onClick={diablePrevent}>unprotect</button>
     </>
   );
 };
