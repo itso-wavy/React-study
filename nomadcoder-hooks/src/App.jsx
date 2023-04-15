@@ -1,24 +1,13 @@
-import useTabs from './hooks/useTabs';
-
-const contents = [
-  {
-    tab: 'Section 1',
-    content: "I'm the section 1",
-  },
-  {
-    tab: 'Section 2',
-    content: "I'm the section 2",
-  },
-];
+import useTitle from './hooks/useTitle';
 
 const App = () => {
-  const { tab, onClick } = useTabs(0, contents);
+  const setTitle = useTitle('home');
+  setTimeout(() => {
+    setTitle('detail');
+  }, 3000);
   return (
     <>
-      {contents.map((item, index) => (
-        <button onClick={() => onClick(index)}>{item.tab}</button>
-      ))}
-      <div>{tab.content}</div>
+      <p>happyHacking!</p>
     </>
   );
 };
