@@ -1,14 +1,10 @@
-import useBeforeLeave from './hooks/useBeforeLeave';
+import useFadeIn from './hooks/useFadeIn';
 
 const App = () => {
-  const handle = e => {
-    e.clientY <= 0 && alert("Wait! I'll give you a discount");
-  };
-  useBeforeLeave(handle);
-
+  const fadeInH1 = useFadeIn(1, 0);
   return (
     <>
-      <p>마우스를 브라우저 바깥으로 이동해보세요.</p>
+      <h1 {...fadeInH1}>Hello world!</h1>
     </>
   );
 };
