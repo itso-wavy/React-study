@@ -12,13 +12,13 @@ const contents = [
 ];
 
 const App = () => {
-  const { section, changeItem } = useTabs(0, contents);
+  const { tab, onClick } = useTabs(0, contents);
   return (
     <>
-      {contents.map((section, index) => (
-        <button onClick={() => changeItem(index)}>{section.tab}</button>
+      {contents.map((item, index) => (
+        <button onClick={() => onClick(index)}>{item.tab}</button>
       ))}
-      <div>{section.content}</div>
+      <div>{tab.content}</div>
     </>
   );
 };
