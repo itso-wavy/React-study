@@ -1,17 +1,17 @@
 import { useEffect, useRef } from 'react';
 
 const useClick = onClick => {
-  const element = useRef();
+  const ref = useRef();
   useEffect(() => {
-    if (typeof onClick === 'function' && element.current)
-      element.current.addEventListener('click', onClick);
+    const element = ref.current;
+    if (typeof onClick === 'function' && element)
+      element.addEventListener('click', onClick);
     return () => {
-      if (element.current)
-        element.current.removeEventListener('click', onClick);
+      if (element) element.removeEventListener('click', onClick);
     };
-  }, []);
+  }, [onClick]);
   if (typeof onClick !== 'function') return;
-  return element;
+  return ref.current;
 };
 
 export default useClick;
