@@ -1,13 +1,20 @@
-import useNetwork from './hooks/useNetwork';
+import useScroll from './hooks/useScroll';
 
 const App = () => {
-  const onChange = online => (online ? 'ONLINE' : 'OFFLINE');
-  const isOnline = useNetwork(onChange);
+  const { y } = useScroll();
 
   return (
-    <>
-      <h1>you are {onChange(isOnline)}</h1>
-    </>
+    <div style={{ height: '500vh' }}>
+      <h1
+        style={{
+          position: 'fixed',
+          textAlign: 'center',
+          color: y < 500 ? 'green' : 'gold',
+        }}
+      >
+        hello!
+      </h1>
+    </div>
   );
 };
 
