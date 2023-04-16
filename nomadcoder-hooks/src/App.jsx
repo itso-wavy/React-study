@@ -1,20 +1,16 @@
-import useFullscreen from './hooks/useFullscreen';
+import useNotification from './hooks/useNotification';
 
 const App = () => {
-  const onFullScreen = isFull =>
-    console.log(isFull ? 'fullscreen' : 'not fullscreen');
-  const { ref, makeFull, exitFull } = useFullscreen(onFullScreen);
+  const triggerNoti = useNotification('One day, browser says...', {
+    body: 'pay more attention to me!',
+    icon: 'https://cdn.dribbble.com/users/2424774/screenshots/16962879/media/d0bd0d738aa6d19fc94bcd06866abe3c.png?compress=1&resize=400x300&vertical=top',
+    image:
+      'https://community.atlassian.com/t5/image/serverpage/image-id/86517i80EA08F2F52FCB3C/image-dimensions/571x321?v=v2',
+  });
 
   return (
     <>
-      <div ref={ref}>
-        <img
-          src='https://www.ikea.com/kr/ko/images/products/blavingad-soft-toy-octopus-yellow__1088894_pe861308_s5.jpg?f=s'
-          alt=''
-        />
-        <button onClick={makeFull}>Make Fullscreen</button>
-        <button onClick={exitFull}>Exit Fullscreen</button>
-      </div>
+      <button onClick={triggerNoti}>Hello</button>
     </>
   );
 };
