@@ -1,20 +1,21 @@
-import useScroll from './hooks/useScroll';
+import useFullscreen from './hooks/useFullscreen';
 
 const App = () => {
-  const { y } = useScroll();
+  const onFullScreen = isFull =>
+    console.log(isFull ? 'fullscreen' : 'not fullscreen');
+  const { ref, makeFull, exitFull } = useFullscreen(onFullScreen);
 
   return (
-    <div style={{ height: '500vh' }}>
-      <h1
-        style={{
-          position: 'fixed',
-          textAlign: 'center',
-          color: y < 500 ? 'green' : 'gold',
-        }}
-      >
-        hello!
-      </h1>
-    </div>
+    <>
+      <div ref={ref}>
+        <img
+          src='https://www.ikea.com/kr/ko/images/products/blavingad-soft-toy-octopus-yellow__1088894_pe861308_s5.jpg?f=s'
+          alt=''
+        />
+        <button onClick={makeFull}>Make Fullscreen</button>
+        <button onClick={exitFull}>Exit Fullscreen</button>
+      </div>
+    </>
   );
 };
 
