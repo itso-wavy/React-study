@@ -1,0 +1,89 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "tag": [
+        "tag",
+        "tag"
+      ],
+      "title": "title1",
+      "content": "기존의 글을 수정해봅니다!",
+      "date": "23-04-04",
+      "author": "wavy",
+      "comments": [
+        {
+          "author": "user1",
+          "content": "Lorem ipsum dolor sit."
+        },
+        {
+          "author": "user2",
+          "content": "Lorem ipsum dolor sit."
+        },
+        {
+          "author": "user3",
+          "content": "Lorem ipsum dolor sit."
+        }
+      ],
+      "edited_date": "23-04-04"
+    },
+    {
+      "id": 2,
+      "tag": [
+        "tag",
+        "tag"
+      ],
+      "title": "title2",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, earum. Fuga possimus ab quod exercitationem corrupti doloremque adipisci nobis a deserunt pariatur quasi dolorum qui ea, autem facere totam distinctio.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, earum. Fuga possimus ab quod exercitationem corrupti doloremque adipisci nobis a deserunt pariatur quasi dolorum qui ea, autem facere totam distinctio.",
+      "date": "23-04-20",
+      "author": "wavy",
+      "comments": [
+        {
+          "author": "user1",
+          "content": "Lorem ipsum dolor sit."
+        },
+        {
+          "author": "user2",
+          "content": "Lorem ipsum dolor sit."
+        },
+        {
+          "author": "user3",
+          "content": "Lorem ipsum dolor sit."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "tag": [
+        "tag",
+        "tag"
+      ],
+      "title": "title3",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, earum. Fuga possimus ab quod exercitationem corrupti doloremque adipisci nobis a deserunt pariatur quasi dolorum qui ea, autem facere totam distinctio.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, earum. Fuga possimus ab quod exercitationem corrupti doloremque adipisci nobis a deserunt pariatur quasi dolorum qui ea, autem facere totam distinctio.",
+      "date": "23-04-20",
+      "author": "wavy",
+      "comments": [
+        {
+          "author": "user1",
+          "content": "Lorem ipsum dolor sit."
+        },
+        {
+          "author": "user2",
+          "content": "Lorem ipsum dolor sit."
+        },
+        {
+          "author": "user3",
+          "content": "Lorem ipsum dolor sit."
+        }
+      ]
+    },
+    {
+      "id": 1681973626963,
+      "tag": [],
+      "author": "wavy",
+      "title": "title",
+      "content": "새로운 포스팅을 작성해봅니다!",
+      "date": "23-04-04",
+      "comment": []
+    }
+  ]
+}

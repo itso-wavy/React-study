@@ -81,8 +81,7 @@ const GlobalStyle = createGlobalStyle`
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
       border: 0;
-}
-
+    }
   }
 `;
 

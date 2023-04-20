@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const onClick = () => {
+  const writePost = () => {
     navigate('./post/write');
   };
 
@@ -21,7 +21,7 @@ const MainPage = () => {
       <Header type='home' />
       <main>
         <Wrapper>
-          <Button text='글쓰기' onClick={onClick} />
+          <Button text='글쓰기' onClick={writePost} />
         </Wrapper>
         <PostList />
       </main>

@@ -4,9 +4,12 @@ const SButton = styled.button`
   padding: 1em 5em;
   font-size: var(--font-size-small);
   font-weight: bold;
-  background-color: var(--color-white);
-  color: var(--color-primary);
+  background-color: ${props =>
+    props.isFull ? 'var(--color-primary)' : 'var(--color-white)'};
+  color: ${props =>
+    !props.isFull ? 'var(--color-primary)' : 'var(--color-white)'};
   border: 1px solid var(--color-primary);
+  white-space: nowrap;
   cursor: pointer;
 
   &:hover {
@@ -14,8 +17,12 @@ const SButton = styled.button`
   }
 `;
 
-const Button = ({ text, onClick }) => {
-  return <SButton onClick={onClick}>{text || 'button'}</SButton>;
+const Button = ({ text, isFull, onClick }) => {
+  return (
+    <SButton isFull={isFull} onClick={onClick}>
+      {text || 'button'}
+    </SButton>
+  );
 };
 
 export default Button;

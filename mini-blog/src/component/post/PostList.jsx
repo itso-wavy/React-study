@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PostListItem from './PostListItem';
-import dummydata from '../../assets/dummydata.json';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.section`
   display: flex;
@@ -10,12 +11,20 @@ const Wrapper = styled.section`
 `;
 
 const PostList = () => {
+  const [data, setData] = useState('');
+  useEffect(() => {
+    axios('http://localhost:3000/posts').then(res => {
+      setData(res.data);
+    });
+  }, []);
+
   return (
     <Wrapper>
       <h2 className='sr-only'>postlist</h2>
-      {dummydata.map(post => {
-        return <PostListItem key={post.id} {...post} />;
-      })}
+      {data &&
+        data.map(post => {
+          return <PostListItem key={post.id} {...post} />;
+        })}
     </Wrapper>
   );
 };

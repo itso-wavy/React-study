@@ -12,7 +12,7 @@ const Wrapper = styled.section`
   border-top: 1px solid var(--color-secondary);
 `;
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments = [] }) => {
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/');
@@ -25,6 +25,7 @@ const CommentList = ({ comments }) => {
         return <CommentListItem key={index} {...comment} />;
       })}
       <TextInput
+        type='comment'
         title='댓글'
         titleAlign='start'
         heigth='100px'
