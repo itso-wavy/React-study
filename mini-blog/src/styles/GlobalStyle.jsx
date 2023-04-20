@@ -24,18 +24,21 @@ const GlobalStyle = createGlobalStyle`
     --color-black: #000000;
     --color-primary: #F81417;
     --color-secondary: #E3E3E3;
-    --color-hightlight: #937ed0; /* 2e38a5 */
 
     /* font-family */
     --font-family-heading: '87MMILSANG-Oblique';
-    --font-family-body: 'Jeju Myeongjo';
-    --font-family-small: '87MMILSANG-Regular';
+    --font-family-body: '87MMILSANG-Regular';
+    --font-family-text: 'Jeju Myeongjo';
 
 
     /* font-size */
     --font-size-small: 0.75rem; // 12px
     --font-size-normal: 1.1875rem; // 19px
     --font-size-big: 2.5rem; // 40px
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     body {
       font-family: var(--font-family-body);
@@ -49,6 +52,13 @@ const GlobalStyle = createGlobalStyle`
       color: inherit;
     }
 
+    main {
+      width: 80%;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 2em 1.8em;
+    }
+
     .title {
       font-family: var(--font-family-heading);
       font-size: var(--font-size-big);
@@ -56,11 +66,23 @@ const GlobalStyle = createGlobalStyle`
       line-height: 1.6em;
     }
 
-    .small {
-      font-family: var(--font-family-small);
-      font-size: var(--font-size-small);
-      line-height: 2em;
+    .text-body {
+      font-family: var(--font-family-text);
+      line-height: inherit;
     }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+}
+
   }
 `;
 

@@ -8,6 +8,7 @@ const SAside = styled.aside`
   text-align: center;
   color: var(--color-white);
   white-space: pre;
+  overflow: hidden;
 `;
 
 const Aside = () => {

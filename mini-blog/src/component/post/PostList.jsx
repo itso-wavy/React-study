@@ -1,37 +1,20 @@
 import styled from 'styled-components';
 import PostListItem from './PostListItem';
+import dummydata from '../../assets/dummydata.json';
 
-const Wrapper = styled.div`
-  /* align-items: center;
-justify-content: flex-start; */
-
-  /* display: flex;
-flex-direction: column;
-
-justify-content: center;
-align-items: flex-start; 
-
-& > * {
-  :not(:last-child) {
-    margin-bottom: 16px;
-  }
-*/
-}
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 `;
 
-const PostList = ({ posts, onClickItem }) => {
+const PostList = () => {
   return (
     <Wrapper>
-      {posts.map(item => {
-        return (
-          <PostListItem
-            key={item.id}
-            post={item}
-            onClick={() => {
-              onClickItem(item);
-            }}
-          />
-        );
+      <h2 className='sr-only'>postlist</h2>
+      {dummydata.map(post => {
+        return <PostListItem key={post.id} {...post} />;
       })}
     </Wrapper>
   );

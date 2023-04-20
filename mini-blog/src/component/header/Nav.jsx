@@ -8,13 +8,12 @@ const SNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: var(--font-family-small);
   text-transform: uppercase;
   border-bottom: 1px solid var(--color-black);
   font-size: 1rem;
 `;
 const SH1 = styled.h1`
-  margin: 0 50px;
+  margin-right: 50px;
   font-weight: bold;
   &:hover {
     opacity: 0.75;

@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
 const SButton = styled.button`
-  /* padding: 8px 16px;
-  font-size: 16px;
-  border-width: 1px;
-  border-radius: 8px;
-  cursor: pointer; */
+  padding: 1em 5em;
+  font-size: var(--font-size-small);
+  font-weight: bold;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
 `;
 
-const Button = ({ title, onClick }) => {
-  return <SButton onClick={onClick}>{title || 'button'}</SButton>;
+const Button = ({ text, onClick }) => {
+  return <SButton onClick={onClick}>{text || 'button'}</SButton>;
 };
 
 export default Button;

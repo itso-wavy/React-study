@@ -1,35 +1,32 @@
-// import Button from '../component/common/Button';
 import Header from '../component/header/Header';
+import Button from '../component/common/Button';
+import PostList from '../component/post/PostList';
+import Footer from '../component/footer/Footer';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 const MainPage = () => {
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate('./post/write');
+  };
+
+  const Wrapper = styled.div`
+    text-align: center;
+    margin: 1em auto;
+  `;
+
   return (
     <>
       <Header type='home' />
       <main>
-        <section className='pagelist'></section>
+        <Wrapper>
+          <Button text='글쓰기' onClick={onClick} />
+        </Wrapper>
+        <PostList />
       </main>
-      <footer>
-        <nav></nav>
-      </footer>
+      <Footer />
     </>
-
-    // <div>
-    //   <nav>
-    //     <h1>logo</h1>
-    //     <ul>
-    //       <li>list1</li>
-    //       <li>list2</li>
-    //       <li>list3</li>
-    //     </ul>
-    //   </nav>
-
-    //   <Button
-    //     title='메롱'
-    //     onClick={() => {
-    //       console.log(1);
-    //     }}
-    //   />
-    // </div>
   );
 };
 
