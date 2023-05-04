@@ -8,6 +8,8 @@
   }
 
   .checkbox {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
     flex: 1; // 차지할 수 있는 영역 모두 차지
     display: flex;
@@ -40,6 +42,8 @@
     align-items: center;
     font-size: 1.5rem;
     color: #ff6b6b;
+    background-color: transparent;
+    border: 0;
     cursor: pointer;
 
     &:hover {
