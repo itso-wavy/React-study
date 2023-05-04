@@ -1,16 +1,21 @@
 # mini-blog practice
 
+<br>
+
+```js
+json-server --watch ./src/assets/data.json
+npm start
+```
+<br>
+
 | <img src='https://user-images.githubusercontent.com/108520997/233301447-94ab273f-e2c4-4cfd-8cee-4d9b6d8f2477.png'> |
 | :----------------------------------------------------------------------------------------------------------------: |
 |                                                    HomePage(웹)                                                    |
 
-| <img width=200 src='https://user-images.githubusercontent.com/108520997/233304048-966dcffd-a004-4367-b565-adb2feeab860.png'> | <img width=200 src='https://user-images.githubusercontent.com/108520997/233301498-b235eae2-4563-4197-8384-8b869202337d.png'> | <img width=200 src='https://user-images.githubusercontent.com/108520997/233301511-cb1ef163-b4ae-43f0-b90b-3e5a6c8031f9.png'> |
+| <img width=300 src='https://user-images.githubusercontent.com/108520997/233304048-966dcffd-a004-4367-b565-adb2feeab860.png'> | <img width=300 src='https://user-images.githubusercontent.com/108520997/233301498-b235eae2-4563-4197-8384-8b869202337d.png'> | <img width=300 src='https://user-images.githubusercontent.com/108520997/233301511-cb1ef163-b4ae-43f0-b90b-3e5a6c8031f9.png'> |
 | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-|                                                       HomePage(모바일)                                                       |                                                        PostDetailPage                                                        |                                                        PostWritePage                                                         |
-
-<code style="color: blue">`json-server --watch ./src/assets/data.json`</code>
-
-<code style="color: blue">`npm start`</code>
+|                                                       HomePage(모바일)                                                       |                                                        PostDetailPage                                                        |                                                        PostWritePage           
+<br>
 
 ## 1. 기획
 
