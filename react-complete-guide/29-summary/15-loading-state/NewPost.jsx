@@ -14,16 +14,6 @@ function NewPost({ onCancel, onAddPost }) {
     setEnteredAuthor(event.target.value);
   }
 
-  // function submitHandler(event) {
-  //   event.preventDefault();
-  //   const postData = {
-  //     body: enteredBody,
-  //     author: enteredAuthor
-  //   };
-  //   onAddPost(postData);
-  //   onCancel();
-  // }
-
   const submitHandler = e => {
     e.preventDefault();
     const postData = {
