@@ -6,7 +6,7 @@ const Admin = () => {
   return (
     <div>
       <Header />
-      <Main />
+      <Main>admin page</Main>
     </div>
   );
 };

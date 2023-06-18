@@ -6,7 +6,7 @@ const Users = () => {
   return (
     <div>
       <Header />
-      <Main />
+      <Main>users page</Main>
     </div>
   );
 };

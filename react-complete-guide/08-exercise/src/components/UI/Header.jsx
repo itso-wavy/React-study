@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.header`
   height: 80px;
-  background-color: teal;
+  background-color: #21bbc0;
   display: flex;
   padding: 10px 30px;
   align-items: center;
@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
       list-style: none;
       gap: 0.5em;
       font-size: 1em;
+      padding-left: 10px;
     }
 
     & a,
@@ -59,9 +60,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = () => {
-  const [isLogin, setIsLogin] = useState(true);
-
+const Header = ({ isLogin, onLogout }) => {
   const handleLogout = () => {
     console.log('logout!');
   };
@@ -81,7 +80,7 @@ const Header = () => {
               <Link to={'/admin'}>Admin</Link>
             </li>
             <li>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={onLogout}>Logout</button>
             </li>
           </ul>
         </nav>

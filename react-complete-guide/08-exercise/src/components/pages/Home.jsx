@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../UI/Header';
 import Main from '../UI/Main.jsx';
 import LoginForm from '../components/LoginForm.jsx';
 
 const Home = () => {
+  const [isLogin, setIsLogin] = useState(false);
+  const logoutHandler = () => {
+    setIsLogin(false);
+  };
   return (
     <>
-      <Header />
+      <Header isLogin={isLogin} onLogout={logoutHandler} />
       <Main>
-        <LoginForm />
+        {!isLogin ? <LoginForm setIsLogin={setIsLogin} /> : <p>WELCOME!</p>}{' '}
       </Main>
     </>
   );
