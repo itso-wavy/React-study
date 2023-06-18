@@ -35,6 +35,6 @@
 
    - 부수효과: http request / localStorage / timer 사용할 때
    - 의존성 배열: 리랜더링에 관련한 state(컴포넌트 내/props/컴포넌트 내 함수에서 정의된 state/변수)
-   - 클린업: validation
+   - 클린업: 사이브이펙트 함수가 실행되기 전 실행, http request / validation 디바운싱(debouncing)
 
 5.
