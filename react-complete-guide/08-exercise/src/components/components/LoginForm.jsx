@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const StyledForm = styled.form`
@@ -50,7 +50,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const LoginForm = ({ setIsLogin }) => {
+const LoginForm = ({ loginHandler }) => {
   const [userinfo, setUserinfo] = useState({
     email: '',
     password: '',
@@ -59,6 +59,30 @@ const LoginForm = ({ setIsLogin }) => {
     email: true,
     password: true,
   });
+
+  // useEffect(() => {
+  //   const handleValidate = e =>
+  //     setTimeout(() => {
+  //       console.log(222);
+  //       if (e.target.name === 'email') {
+  //         setIsValid({
+  //           ...isValid,
+  //           [e.target.name]: e.target.value.includes('@'),
+  //         });
+  //       }
+  //       if (e.target.name === 'password') {
+  //         setIsValid({
+  //           ...isValid,
+  //           [e.target.name]: e.target.value.length >= 6,
+  //         });
+  //       }
+  //     }, 500);
+
+  //   return () => {
+  //     console.log(111);
+  //     clearTimeout(handleValidate);
+  //   };
+  // }, [userinfo.email, userinfo.password]);
 
   const handleUserInfo = e => {
     setUserinfo(userinfo => {
@@ -76,7 +100,7 @@ const LoginForm = ({ setIsLogin }) => {
   };
   const handleFormSubmit = e => {
     e.preventDefault();
-    if (isValid.email && isValid.password) setIsLogin(true);
+    if (isValid.email && isValid.password) loginHandler();
   };
 
   return (
