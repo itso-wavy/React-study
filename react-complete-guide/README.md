@@ -30,11 +30,27 @@
 
 1. fragment
 2. createPortal: 컴포넌트를 DOM 안의 다른 위치에 렌더링
-3. useRef: native DOM 요소에 접근, useState 대체, event 핸들러 안에서 사용
-4. useEffect: 컴포넌트가 평가된 후에 콜백 함수 실행
+3. useRef(useState 대체): native DOM 요소에 접근, event 핸들러 안에서 사용
+4. useEffect: 컴포넌트가 평가된 후에 콜백 함수 실행, 의존성을 통해 특정 작업의 실행 시점을 결정함
 
    - 부수효과: http request / localStorage / timer 사용할 때
    - 의존성 배열: 리랜더링에 관련한 state(컴포넌트 내/props/컴포넌트 내 함수에서 정의된 state/변수)
    - 클린업: 사이브이펙트 함수가 실행되기 전 실행, http request / validation 디바운싱(debouncing)
 
-5.
+5. useReducer(useState 대체): 복잡한 state, state 업데이트 로직의 관리, 서로 연관된 state들 다루기(ex. 폼 데이터)
+
+   - 리듀서 함수는 최신 state 스냅샷을 가져와서 업데이트된 state를 반환
+   - 입력값과 유효성을 결합하기 위해 사용할 수 있음
+
+```js
+const [state, dispatchState] = useReducer(reducerFunc, initState, initFunc);
+
+dispatchState(action); // action: {type, payload}
+// dispatchState(action) => reducerFunc(state, action) => return newState
+```
+
+6. createContext: state, state 변경 함수
+   - provider: 객체 컴포넌트 제공자
+   - consumer/useContext: 소비자, 소비 컴포넌트는 모두 재렌더링되는 문제가 있음
+     - consumer: 내부 함수 필요
+     - `useContext(ctx)`
