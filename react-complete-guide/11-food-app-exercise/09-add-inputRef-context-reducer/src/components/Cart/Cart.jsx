@@ -1,5 +1,5 @@
-import classes from './Cart.module.css';
 import Modal from '../UI/Modal.jsx';
+import classes from './Cart.module.css';
 
 const Cart = ({ onClick }) => {
   const dummyItems = (

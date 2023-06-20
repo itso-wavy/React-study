@@ -4,9 +4,13 @@ import Meals from './components/Meals/Meals';
 import Cart from './components/Cart/Cart';
 
 function App() {
-  const [cartIsShowed, setCartIsShowed] = useState(false);
+  const [cartIsShown, setCartIsShown] = useState(false);
+
   const handleCartShowed = () => {
-    setCartIsShowed(true);
+    setCartIsShown(true);
+  };
+  const handleCartHide = () => {
+    setCartIsShown(false);
   };
 
   return (
@@ -15,8 +19,7 @@ function App() {
       <main>
         <Meals />
       </main>
-      <Cart />
-      {/* {cartIsShowed && <Cart />} */}
+      {cartIsShown && <Cart onClick={handleCartHide} />}
     </>
   );
 }
