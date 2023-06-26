@@ -83,10 +83,12 @@ dispatchState(action); // action: {type, payload}
 ## 클래스 컴포넌트
 
 1. 라이프사이클
-   1. componentDidMount(): 마운트시 호출(`useEffect(F, [])`)
-   2. componentDidUpdate(): (`useEffect(F, [value])`)
-   3. componentWillUnmount(): (`useEffect(() => {return() => {}}, [])`)
+   - componentDidMount(): 마운트시 호출(`useEffect(F, [])`)
+   - componentDidUpdate(): (`useEffect(F, [value])`)
+   - componentWillUnmount(): (`useEffect(() => {return() => {}}, [])`)
 2. 오류 경계
+   클래스형 컴포넌트에서 에러 발생시 어플리케이션 동작을 멈추지 않고 에러 처리하는 방법. jsx 내부가 아니면 try-catch 문을 사용할 수 없음
+   - componentDidCatch()
 
 ## HTTP 요청
 
