@@ -1,24 +1,23 @@
-export const on = (target, eventName, handler) => {
-  target.addEventListener(eventName, handler);
-};
-
-export const emit = ($target, eventName, params) => {
-  const event = new CustomEvent(eventName, { params });
-  $target.dispatchEvent(event);
-};
-
-export const qs = (selector, scope = document) => {
+// DOM 요소 잡아내기
+export function qs(selector, scope = document) {
   if (!selector) throw 'no selector';
 
   return scope.querySelector(selector);
-};
-
+}
 export function qsAll(selector, scope = document) {
   if (!selector) throw 'no selector';
 
   return Array.from(scope.querySelectorAll(selector));
 }
 
+// (커스텀)이벤트 바인딩
+export function on(target, eventName, handler) {
+  target.addEventListener(eventName, handler);
+}
+export function emit(target, eventName, detail) {
+  const event = new CustomEvent(eventName, { detail });
+  target.dispatchEvent(event);
+}
 export function delegate(target, eventName, selector, handler) {
   const emitEvent = event => {
     const potentialElements = qsAll(selector, target);

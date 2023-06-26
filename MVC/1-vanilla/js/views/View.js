@@ -1,27 +1,40 @@
-// 뷰(V)
 import { emit, on } from '../helpers.js';
 
-class View {
-  constructor($ele) {
-    this.$ele = $ele;
-    this.originalDisplay = this.$ele.style.display || '';
+const tag = '[View]';
+
+export default class View {
+  // DOM 요소를 클래스의 내부 변수로 저장,
+  // $ele의 display 여부를 설정
+  // $ele의 이벤트 바인딩 관리
+
+  constructor(element) {
+    console.log(tag, 'constructor');
+
+    if (!element) throw 'no element';
+
+    this.element = element;
+    this.originalDisplay = this.element.style.display || '';
+
+    return this;
   }
 
   hide() {
-    this.$ele.style.display = 'none';
+    this.element.style.display = 'none';
+    return this;
   }
 
   show() {
-    this.$ele.style.display = this.originalDisplay;
+    this.element.style.display = this.originalDisplay;
+    return this;
   }
 
   on(eventName, handler) {
-    // 이벤트 리스너
-    on(this.$ele, eventName, handler);
+    on(this.element, eventName, handler);
+    return this;
   }
 
-  emit(eventName, params) {
-    // 디스패치 이벤트
-    emit(this.$ele, eventName, params);
+  emit(eventName, data) {
+    emit(this.element, eventName, data);
+    return this;
   }
 }
