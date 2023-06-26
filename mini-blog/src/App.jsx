@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GloabalStyle from './styles/globalStyle';
-import HomePage from './page/HomePage';
-import PostWritePage from './page/PostWritePage';
-import PostDetailPage from './page/PostDetailPage';
+import GloabalStyle from './lib/styles/GlobalStyle.jsx';
+import HomePage from './pages/HomePage';
+import PostDetailPage from './pages/PostDetailPage';
+import PostWritePage from './pages/PostWritePage';
 
 const App = () => {
   return (

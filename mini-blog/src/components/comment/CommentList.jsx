@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import CommentListItem from './CommentListItem';
-import TextInput from '../common/TextInput';
+import TextInput from '../@UI/TextInput';
+import styled from 'styled-components';
 
 const Wrapper = styled.section`
   display: flex;

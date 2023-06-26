@@ -1,0 +1,23 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.like-btn{
+  background-color: gainsboro;
+  border: none;
+  height: 2em;
+  padding: 1em;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.on {
+  color: pink;
+}

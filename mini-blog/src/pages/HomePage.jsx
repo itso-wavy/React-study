@@ -1,8 +1,8 @@
-import Header from '../component/header/Header';
-import Button from '../component/common/Button';
-import PostList from '../component/post/PostList';
-import Footer from '../component/footer/Footer';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/@layout/header/Header';
+import Button from '../components/@UI/Button';
+import Footer from '../components/@layout/footer/Footer';
+import PostList from '../components/post/PostList';
 import styled from 'styled-components';
 
 const MainPage = () => {

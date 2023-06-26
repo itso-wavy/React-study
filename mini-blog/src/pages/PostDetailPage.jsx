@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import Header from '../component/header/Header';
-import Footer from '../component/footer/Footer';
-import Button from '../component/common/Button';
-import CommentList from '../component/comment/CommentList';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Header from '../components/@layout/header/Header';
+import Footer from '../components/@layout/footer/Footer';
+import Button from '../components/@UI/Button';
+import CommentList from '../components/comment/CommentList';
+import styled from 'styled-components';
 import axios from 'axios';
 
 const Wrapper = styled.section`
@@ -55,7 +55,7 @@ const PostPage = () => {
   });
 
   useEffect(() => {
-    axios('http://localhost:3000/posts').then(res => {
+    axios('http://localhost:3001/posts').then(res => {
       setData(...res.data.filter(item => item['id'] === Number(URL_ID)));
     });
   }, []);
@@ -67,7 +67,7 @@ const PostPage = () => {
   };
   const deletePost = () => {
     axios({
-      url: `http://localhost:3000/posts/${URL_ID}`,
+      url: `http://localhost:3001/posts/${URL_ID}`,
       method: 'DELETE',
     }).then(() => {
       navigate('/');

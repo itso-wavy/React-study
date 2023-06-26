@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import PostListItem from './PostListItem';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
+import PostListItem from './PostListItem';
+import styled from 'styled-components';
+import axios from 'axios';
 
 const Wrapper = styled.section`
   display: flex;
@@ -13,7 +13,7 @@ const Wrapper = styled.section`
 const PostList = () => {
   const [data, setData] = useState('');
   useEffect(() => {
-    axios('http://localhost:3000/posts').then(res => {
+    axios('http://localhost:3001/posts').then(res => {
       setData(res.data);
     });
   }, []);

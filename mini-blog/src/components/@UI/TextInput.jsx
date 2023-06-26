@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import Button from './Button';
+import { forwardRef, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState } from 'react';
+import Button from './Button';
+import styled from 'styled-components';
 import axios from 'axios';
 
 const SSection = styled.section`
@@ -21,6 +21,9 @@ const STextarea = styled.textarea`
   padding: 1em;
   font-size: var(--font-size-normal);
   outline: none;
+  &:focus {
+    outline: 1px solid gold;
+  }
 `;
 const Wrapper = styled.div`
   margin-top: 2em;
@@ -36,6 +39,7 @@ const TextInput = ({ type = 'post', title, titleAlign, heigth }) => {
     navigate(-1);
   };
   const [content, setContent] = useState('');
+  const inputRef = useRef();
 
   const getDate = () => {
     const date = new Date();
@@ -46,9 +50,14 @@ const TextInput = ({ type = 'post', title, titleAlign, heigth }) => {
   };
 
   const registPost = () => {
+    if (inputRef.current.value === '') {
+      inputRef.current.focus();
+      return;
+    }
+
     if (!URL_ID) {
       axios({
-        url: `http://localhost:3000/posts`,
+        url: `http://localhost:3001/posts`,
         method: 'POST',
         data: {
           id: Date.now(),
@@ -62,7 +71,7 @@ const TextInput = ({ type = 'post', title, titleAlign, heigth }) => {
       });
     } else {
       axios({
-        url: `http://localhost:3000/posts/${URL_ID}`,
+        url: `http://localhost:3001/posts/${URL_ID}`,
         method: 'PATCH',
         data: {
           content: content,
@@ -83,6 +92,7 @@ const TextInput = ({ type = 'post', title, titleAlign, heigth }) => {
       <SSection className='postWrite'>
         <SH2 titleAlign={titleAlign}>{title}</SH2>
         <STextarea
+          ref={inputRef}
           className='text-body'
           value={content}
           onChange={onChange}
@@ -97,4 +107,4 @@ const TextInput = ({ type = 'post', title, titleAlign, heigth }) => {
   );
 };
 
-export default TextInput;
+export default forwardRef(TextInput);

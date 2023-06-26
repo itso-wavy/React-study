@@ -1,5 +1,5 @@
-import Header from '../component/header/Header';
-import TextInput from '../component/common/TextInput.jsx';
+import Header from '../components/@layout/header/Header';
+import TextInput from '../components/@UI/TextInput.jsx';
 
 const PostPage = () => {
   return (
