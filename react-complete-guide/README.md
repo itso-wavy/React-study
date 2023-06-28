@@ -115,7 +115,6 @@ dispatchState(action); // action: {type, payload}
 여러 컴포넌트에서 공통으로 사용하는 로직을 별도의 파일로 분리한 것
 
 - use로 시작해야 하는 규칙이 있음
-<!-- `react-scripts --openssl-legacy-provider start` -->
 
 ## 폼
 
@@ -135,3 +134,5 @@ dispatchState(action); // action: {type, payload}
 - UI
   1. 검증 실패시 인풋 배경과 보더가 빨갛게 됨
   2. 빨간 안내문이 표시됨
+
+<!-- `react-scripts --openssl-legacy-provider start` -->
