@@ -8,7 +8,7 @@ import authSlice from './auth-slice';
  */
 
 const store = configureStore({
-  reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
+  reducer: { counter: counterSlice, auth: authSlice },
 });
 
 export default store;
