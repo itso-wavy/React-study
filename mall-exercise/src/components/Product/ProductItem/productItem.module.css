@@ -1,3 +1,7 @@
+li {
+  list-style-type: none;
+}
+
 .info {
   display: flex;
   justify-content: space-between;
