@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-import data from '../database/data';
+// import data from '../database/data';
 import ProductItem from '../components/Product/ProductItem/ProductItem';
 import RegisterForm from '../components/Product/RegisterForm/RegisterForm';
 import Modal from '../components/@ui/Modal';
-import { Link } from 'react-router-dom';
+import { useRouteLoaderData, useNavigation, json } from 'react-router-dom';
+import Loading from '../components/@ui/Loading';
+import axios from 'axios';
 
 export default function ProductPage() {
+  const {
+    data: { data },
+  } = useRouteLoaderData('products');
+  const { state } = useNavigation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const registerNewProduct = () => {
@@ -14,6 +21,8 @@ export default function ProductPage() {
   const modalCloseHandler = () => {
     setIsModalOpen(false);
   };
+
+  if (state === 'loading') return <Loading />;
 
   return (
     <div className='p-6 rounded-lg bg-white'>
@@ -29,11 +38,9 @@ export default function ProductPage() {
           <RegisterForm />
         </Modal>
       )}
-      <ul className='flex flex-col gap-3 flex-wrap sm:flex-row'>
+      <ul className='flex flex-col gap-3 flex-wrap sm:flex-row items-center'>
         {data.map(item => (
-          <Link to='/' key={item.id}>
-            <ProductItem {...item} />
-          </Link>
+          <ProductItem key={item.id} {...item} />
         ))}
       </ul>
     </div>
@@ -41,8 +48,15 @@ export default function ProductPage() {
 }
 
 export const loader = async () => {
-  const data = await fetch(
-    'https://kinetic-octagon-368403-default-rtdb.firebaseio.com/products/data'
-  );
-  console.log(data);
+  try {
+    const res = await axios(
+      'https://kinetic-octagon-368403-default-rtdb.firebaseio.com/products.json'
+    );
+    return res;
+  } catch (error) {
+    throw json(
+      { message: 'sorry, could not fetch server data' },
+      { status: 500 }
+    );
+  }
 };

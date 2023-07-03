@@ -4,7 +4,10 @@ import RootLayout from '../components/@layout/RootLayout';
 import ProductLayout from '../components/@layout/ProductLayout';
 import HomePage from '../pages/HomePage';
 import ProductPage, { loader as productLoader } from '../pages/ProductPage';
-import ProductDetailPage from '../pages/ProductDetailPage';
+import ProductDetailPage, {
+  loader as productDetailLoader,
+  action as productDetailAction,
+} from '../pages/ProductDetailPage';
 import ContactPage from '../pages/ContactPage.jsx';
 import ErrorPage from '../pages/ErrorPage';
 
@@ -24,11 +27,15 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
+            id: 'products',
             loader: productLoader,
             element: <ProductPage />,
           },
           {
             path: ':id',
+            id: 'product-detail',
+            loader: productDetailLoader,
+            action: productDetailAction,
             element: <ProductDetailPage />,
           },
         ],
