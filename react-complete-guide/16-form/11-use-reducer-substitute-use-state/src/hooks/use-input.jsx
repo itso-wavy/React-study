@@ -7,9 +7,13 @@ const type = {
 };
 
 const initialInputState = {
+  // useState으로 관리하는 상태들의 초깃값을 분리해둔 것
   value: '',
   isTouched: false,
 };
+// const [enteredValue, setEnteredValue] = useState('');
+// const [isTouched, setIsTouched] = useState(false);
+
 const inputStateReducer = (state, action) => {
   switch (action.type) {
     case type.INPUT:
@@ -28,9 +32,6 @@ export default function useInput(validateFn) {
     inputStateReducer,
     initialInputState
   );
-
-  // const [enteredValue, setEnteredValue] = useState('');
-  // const [isTouched, setIsTouched] = useState(false);
 
   const valueIsValid = validateFn(inputState.value);
   const hasError = !valueIsValid && inputState.isTouched;

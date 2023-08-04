@@ -56,7 +56,7 @@ const BasicForm = props => {
   const emailClasses = emailHasError ? 'form-control invalid' : 'form-control';
 
   return (
-    <form>
+    <form onSubmit={formSubmissionHandler}>
       <div className='control-group'>
         <div className={firstNameClasses}>
           <label htmlFor='name'>First Name</label>

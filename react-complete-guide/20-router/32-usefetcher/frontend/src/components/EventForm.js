@@ -63,7 +63,7 @@ export default EventForm;
   - 수동으로 http 요청을 전송하거나 로딩, 오류 상태를 관리
   - useNavigate 등을 통해 페이지를 떠남
   
-  => 로더의 action+Form을 사용하여 이 방법들을 대체
+  => 로더의 Form + action을 사용하여 이 방법들을 대체
       Form 전송시 백엔드가 아닌 action으로 요청됨
 */
 export const action = async ({ request, params }) => {
