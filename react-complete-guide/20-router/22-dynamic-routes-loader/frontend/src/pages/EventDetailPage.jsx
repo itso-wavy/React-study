@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, useLoaderData, json } from 'react-router-dom';
 import EventItem from '../components/EventItem';
 

@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 
-const type = {
+const ACTION_CREATOR = {
   INPUT: 'INPUT',
   BLUR: 'BLUR',
   RESET: 'RESET',
@@ -16,24 +16,24 @@ const initialInputState = {
 
 const inputStateReducer = (state, action) => {
   switch (action.type) {
-    case type.INPUT:
+    case ACTION_CREATOR.INPUT:
       return { ...state, value: action.value };
-    case type.BLUR:
+    case ACTION_CREATOR.BLUR:
       return { ...state, isTouched: true };
-    case type.RESET:
+    case ACTION_CREATOR.RESET:
       return { value: '', isTouched: false };
     default:
       return state;
   }
 };
 
-export default function useInput(validateFn) {
+export default function useInput(validationFn) {
   const [inputState, dispatch] = useReducer(
     inputStateReducer,
     initialInputState
   );
 
-  const valueIsValid = validateFn(inputState.value);
+  const valueIsValid = validationFn(inputState.value);
   const hasError = !valueIsValid && inputState.isTouched;
 
   const valueChangeHandler = e => {

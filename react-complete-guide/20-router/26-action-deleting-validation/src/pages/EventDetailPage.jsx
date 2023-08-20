@@ -22,7 +22,7 @@ export const loader = async ({ request, params }) => {
       { status: 500 }
     ); // errorPage로
   } else {
-    return response; // 13줄로
+    return response; // 8줄로
   }
 };
 
