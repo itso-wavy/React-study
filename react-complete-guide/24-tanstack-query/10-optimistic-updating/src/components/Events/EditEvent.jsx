@@ -18,13 +18,6 @@ export default function EditEvent() {
 
   const { mutate } = useMutation({
     mutationFn: updateEvent,
-    // onSuccess: () => {
-    // queryClient.invalidateQueries({
-    //   queryKey: ['events'],
-    //   refetchType: 'none',
-    // });
-    //   navigate('../');
-    // },
     onMutate: async ({ id, event }) => {
       // mutate 호출 후 서버 응답 필요 없이 즉시 실행, 낙관적 업데이트시 비동기적으로 작동해야 함
       const queryKey = ['events', { id }];

@@ -23,18 +23,11 @@ export default function EditEvent() {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ['event', { id }],
     queryFn: ({ signal }) => fetchEvent({ signal, id }),
-    staleTime: 10000,
+    // staleTime: 10000,
   });
 
   // const { mutate } = useMutation({
   //   mutationFn: updateEvent,
-  //   // onSuccess: () => {
-  //   // queryClient.invalidateQueries({
-  //   //   queryKey: ['events'],
-  //   //   refetchType: 'none',
-  //   // });
-  //   //   navigate('../');
-  //   // },
   //   onMutate: async ({ id, event }) => {
   //     // mutate 호출 후 서버 응답 필요 없이 즉시 실행, 낙관적 업데이트시 비동기적으로 작동해야 함
   //     const queryKey = ['events', { id }];
@@ -117,8 +110,8 @@ export default function EditEvent() {
 }
 
 export const loader = ({ params }) => {
-  // useQuery 훅 대체
   return queryClient.fetchQuery({
+    // useQuery 훅 대체
     queryKey: ['event', { id: params.id }],
     queryFn: ({ signal }) => fetchEvent({ signal, id: params.id }),
   });
