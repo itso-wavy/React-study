@@ -1,0 +1,27 @@
+import { useRef } from 'react';
+
+const NewTodo: React.FC<{ onAddTodo: (newTodo: string) => void }> = ({
+  onAddTodo,
+}) => {
+  const todoTextInputRef = useRef<HTMLInputElement>(null);
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const inputText = todoTextInputRef.current!.value;
+    if (inputText.trim().length === 0) {
+      return; // 공백 밸리데이팅
+    }
+    // 투두리스트에 투두 추가
+    onAddTodo(inputText);
+  };
+
+  return (
+    <form onSubmit={submitHandler}>
+      <label htmlFor='text'>New Todo: </label>
+      <input type='text' id='text' ref={todoTextInputRef} />
+      <button>Add</button>
+    </form>
+  );
+};
+
+export default NewTodo;
