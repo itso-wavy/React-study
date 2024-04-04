@@ -1,9 +1,10 @@
 // import { useEffect, useState } from 'react';
-import { json, useLoaderData } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Await, json, useLoaderData } from 'react-router-dom';
 import EventsList from '../components/EventsList';
 
 function EventsPage() {
-  const data = useLoaderData();
+  const { events } = useLoaderData();
 
   // const [isLoading, setIsLoading] = useState(false);
   // const [fetchedEvents, setFetchedEvents] = useState();
@@ -28,12 +29,17 @@ function EventsPage() {
 
   return (
     <>
-      {data.isError ? (
+      <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+        <Await resolve={events}>
+          {loadedEvents => <EventsList events={loadedEvents} />}
+        </Await>
+      </Suspense>
+      {/* {data.isError ? (
         <p>{data.message}</p>
       ) : (
         <EventsList events={data.events} />
       )}
-      {/* <div style={{ textAlign: 'center' }}>
+       <div style={{ textAlign: 'center' }}>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
     </div>
@@ -44,7 +50,7 @@ function EventsPage() {
   );
 }
 
-export const loader = async () => {
+export const loadEvents = async () => {
   const response = await fetch('http://localhost:8080/events');
 
   if (!response.ok) {
@@ -64,8 +70,13 @@ export const loader = async () => {
   } else {
     // const resData = await response.json();
     // return resData;
-    return response;
+    const { events } = await response.json();
+    return events;
   }
+};
+
+export const loader = () => {
+  return defer({ events: loadEvents() });
 };
 
 export default EventsPage;
