@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useDeleteTodo } from "@/store/todos";
+import { useTodoActions } from "@/store/todos";
 
 export default function TodoItem({
   id,
@@ -8,7 +8,7 @@ export default function TodoItem({
   id: number;
   content: string;
 }) {
-  const deleteTodo = useDeleteTodo();
+  const { deleteTodo } = useTodoActions();
 
   const handleDeleteClick = () => {
     deleteTodo(id);

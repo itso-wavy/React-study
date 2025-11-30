@@ -1,12 +1,12 @@
 // import { useEffect, useState } from "react";
 import TodoEditor from "@/components/todo-list/todo-editor";
 import TodoList from "@/components/todo-list/todo-list";
-import { useTodosData } from "@/hooks/querties/use-todos.data";
+import { useTodosData } from "@/hooks/queries/use-todos-data";
 
 const TodoPage = () => {
   /*   const [todos, setTodos] = useState<Todo[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
 
   const fetchData = async () => {
     setIsLoading(true);

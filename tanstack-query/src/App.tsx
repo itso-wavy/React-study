@@ -5,6 +5,7 @@ import SignInPage from "@/pages/sign-in-page";
 import SignUpPage from "@/pages/sign-up-page";
 import CounterPage from "@/pages/counter-page";
 import TodoPage from "@/pages/todo-page";
+import TodoDetailPage from "@/pages/todo-detail-page";
 
 import "./App.css";
 
@@ -22,7 +23,8 @@ function App() {
     <Routes>
       <Route path="/" element={<IndexPage />} />
       <Route path="/counter" element={<CounterPage />} />
-      <Route path="/todo-list" element={<TodoPage />} />
+      <Route path="/todolist" element={<TodoPage />} />
+      <Route path="/todolist/:id" element={<TodoDetailPage />} />
 
       <Route element={<AuthLayout />}>
         <Route path="/sign-in" element={<SignInPage />} />

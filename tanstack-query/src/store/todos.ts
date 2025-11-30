@@ -21,7 +21,7 @@ const useTodosStore = create(
             });
           });
         },
-        deleteTodo: (targetId: number) => {
+        deleteTodo: (targetId: Todo["id"]) => {
           set((state) => {
             state.todos = state.todos.filter((todo) => todo.id !== targetId);
           });

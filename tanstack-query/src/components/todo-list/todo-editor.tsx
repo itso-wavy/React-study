@@ -17,7 +17,7 @@ const TodoEditor = () => {
     <div className="flex gap-2">
       <Input
         value={content}
-        placeholder="새로운 할일을 입력해주세요."
+        placeholder="새로운 할일을 입력해 주세요."
         onChange={(e) => setContent(e.target.value)}
       />
       <Button onClick={handleAddClick}>추가</Button>

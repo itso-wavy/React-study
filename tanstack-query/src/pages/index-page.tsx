@@ -10,7 +10,7 @@ export default function IndexPage() {
         → counter
       </Link>
       <Link
-        to="todo-list"
+        to="todolist"
         className="rounded-md bg-black p-3 text-white hover:bg-black/80"
       >
         → todo-list
