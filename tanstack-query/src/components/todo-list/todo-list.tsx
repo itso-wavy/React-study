@@ -11,12 +11,12 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
   const handleDeleteClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
-    deleteTodo(todo.id.toString());
+    deleteTodo(todo.id);
   };
 
   return (
     <Link
-      id={todo.id.toString()}
+      id={todo.id}
       to={`/todolist/${todo.id}`}
       className="flex items-center justify-between rounded-sm border px-3 py-2"
     >

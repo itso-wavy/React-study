@@ -1,1 +1,1 @@
-- server start cmd: npx json-server server/db.json
+- server start cmd: `npx json-server server/db.json`
