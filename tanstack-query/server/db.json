@@ -3,16 +3,41 @@
     {
       "id": "1",
       "content": "Todo 1",
-      "isDone": true
+      "isDone": false
     },
     {
       "id": "2",
       "content": "Todo 2",
-      "isDone": true
+      "isDone": false
     },
     {
       "id": "3",
       "content": "Todo 3",
+      "isDone": false
+    },
+    {
+      "id": "28f0",
+      "content": "new todo",
+      "isDone": false
+    },
+    {
+      "id": "dcf2",
+      "content": "new todo 2",
+      "isDone": false
+    },
+    {
+      "id": "f4e4",
+      "content": "new todo 3",
+      "isDone": false
+    },
+    {
+      "id": "2270",
+      "content": "new todo 4",
+      "isDone": false
+    },
+    {
+      "id": "cc9c",
+      "content": "new todo 5",
       "isDone": false
     }
   ]

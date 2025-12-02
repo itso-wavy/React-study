@@ -25,7 +25,7 @@ const TodoEditor = () => {
   };
 
   return (
-    <div className="flex gap-2">
+    <form className="flex gap-2">
       <Input
         value={content}
         placeholder="새로운 할일을 입력해 주세요."
@@ -34,7 +34,7 @@ const TodoEditor = () => {
       <Button disabled={isPending} onClick={handleAddClick}>
         추가
       </Button>
-    </div>
+    </form>
   );
 };
 
