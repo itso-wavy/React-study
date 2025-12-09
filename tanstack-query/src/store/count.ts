@@ -1,10 +1,10 @@
 import { create } from "zustand";
 import {
   combine,
-  subscribeWithSelector,
-  persist,
   createJSONStorage,
   devtools,
+  persist,
+  subscribeWithSelector,
 } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 

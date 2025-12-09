@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 
 import { Button } from "@/components/ui/button";
+import { useDeleteTodoMutation } from "@/hooks/mutations/use-delete-todo-mutation";
 import { useUpdateTodoMutation } from "@/hooks/mutations/use-update-todo-mutation";
+import { useTodoDataById } from "@/hooks/queries/use-todo-data-by-id";
 // import { useTodoActions } from "@/store/todos";
 import type { Todo } from "@/types";
 
-const TodoItem = ({ todo }: { todo: Todo }) => {
+const TodoItem = ({ id }: { id: Todo["id"] }) => {
   // const { deleteTodo } = useTodoActions();
 
   // const handleDeleteClick = (e: React.MouseEvent) => {
@@ -14,14 +16,21 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
   //   deleteTodo(todo.id);
   // };
 
-  const { mutate } = useUpdateTodoMutation();
+  const { data: todo } = useTodoDataById(id, "LIST");
+
+  const { mutate: updateMutate } = useUpdateTodoMutation();
+  const { mutate: deleteMutate, isPending: isDeleting } =
+    useDeleteTodoMutation();
 
   const handleCheckboxClick = () => {
     if (!todo.id) return;
-    mutate({ id: todo.id, isDone: !todo.isDone });
+    updateMutate({ id: todo.id, isDone: !todo.isDone });
   };
 
-  const handleDeleteClick = () => {};
+  const handleDeleteClick = () => {
+    if (!todo.id) return;
+    deleteMutate(todo.id);
+  };
 
   return (
     <div>
@@ -29,6 +38,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
         <div className="flex w-full items-center gap-4">
           <input
             type="checkbox"
+            disabled={isDeleting}
             checked={todo.isDone}
             onChange={handleCheckboxClick}
           />
@@ -42,6 +52,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
           </Link>
         </div>
         <Button
+          disabled={isDeleting}
           variant="destructive"
           onClick={handleDeleteClick}
           className="cursor-pointer"

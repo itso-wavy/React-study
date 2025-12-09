@@ -26,7 +26,7 @@ const TodoPage = () => {
     fetchData();
   }, []); */
 
-  const { data: todos, isLoading, error } = useTodosData();
+  const { data: todoIds, isLoading, error } = useTodosData();
 
   if (error) return <div>오류가 발생했습니다.</div>;
   if (isLoading) return <div>로딩 중입니다.</div>;
@@ -35,7 +35,7 @@ const TodoPage = () => {
     <div className="flex flex-col gap-5 p-4">
       <h1 className="text-2xl font-semibold">TodoList</h1>
       <TodoEditor />
-      {todos && <TodoList todos={todos} />}
+      {todoIds && <TodoList todoIds={todoIds} />}
     </div>
   );
 };

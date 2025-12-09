@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { combine } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
+
 import type { Todo } from "@/types";
 
 const initialState: {
@@ -18,6 +19,7 @@ const useTodosStore = create(
             state.todos.push({
               id: new Date().getTime().toString(),
               content: content,
+              isDone: false,
             });
           });
         },
